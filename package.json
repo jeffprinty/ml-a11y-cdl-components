@@ -4,9 +4,11 @@
   "description": "Accessible react components that comply with the Macmillan Learning CDL",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --content-base ./demo/ --hot --history-api-fallback",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "lint:css": "stylelint \"./components/**/*.js\""
   },
   "jest": {
     "snapshotSerializers": [
@@ -28,17 +30,39 @@
   "homepage": "https://github.com/mlazul/ml-a11y-cdl-components#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^7.2.2",
     "babel-jest": "^19.0.0",
+    "babel-loader": "^6.3.2",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
     "babel-preset-stage-1": "^6.24.1",
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
     "jest": "^19.0.2",
-    "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-processor-styled-components": "^0.1.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "prop-types": "https://registry.npmjs.org/prop-types/-/prop-types-15.5.8.tgz",
+    "react": "^15.5.4",
+    "react-a11y": "^0.3.3",
+    "react-dom": "^15.4.2",
+    "react-hot-loader": "^3.0.0-beta.6",
     "styled-components": "^1.4.5"
   }
 }

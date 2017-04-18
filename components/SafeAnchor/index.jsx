@@ -5,15 +5,21 @@ import PropTypes from 'prop-types';
 const propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
+  componentClass: PropTypes.string,
   disabled: PropTypes.bool,
   role: PropTypes.string,
   tabIndex: PropTypes.oneOfType([
-    PropTypes.number, PropTypes.string,
-  ]),
+    PropTypes.number, PropTypes.string
+  ])
 };
 
 const defaultProps = {
   componentClass: 'a',
+  href: '',
+  tabIndex: 0,
+  role: 'button',
+  onClick: () => {},
+  disabled: false
 };
 
 function isTrivialHref(href) {
@@ -68,8 +74,8 @@ class SafeAnchor extends React.Component {
 
     return (
       <Component
-        {...props}
-        onClick={this.handleClick}
+        { ...props }
+        onClick={ this.handleClick }
       />
     );
   }

@@ -7,11 +7,11 @@ module.exports = {
     app: [
       'babel-polyfill',
       'react-hot-loader/patch',
-      './src/index'
+      './demo/src/index'
     ]
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './demo/dist'),
     filename: '[name].js'
   },
   resolve: {
@@ -30,7 +30,8 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       options: {
         eslint: {
-          configFile: './.eslintrc'
+          configFile: './.eslintrc',
+          fix: true
         }
       }
     })

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 const icons = {
   alert_outline: (
     <g>
@@ -359,8 +360,8 @@ const icons = {
   ),
   pause_solo: (
     <g>
-      <rect x="5.04" y="3" width="5" height="18"/>
-      <rect x="14.04" y="3" width="5" height="18"/>
+      <rect x="5.04" y="3" width="5" height="18" />
+      <rect x="14.04" y="3" width="5" height="18" />
     </g>
   ),
   person: (
@@ -376,7 +377,7 @@ const icons = {
     </g>
   ),
   play_solo: (
-    <polygon points="6.04 21 20.36 11.99 6.04 3.06 6.04 21" fillRule="evenodd"/>
+    <polygon points="6.04 21 20.36 11.99 6.04 3.06 6.04 21" fillRule="evenodd" />
   ),
   plus: (
     <polygon points="21 11 13 11 13 3 11 3 11 11 3 11 3 13 11 13 11 21 13 21 13 13 21 13 21 11" />
@@ -394,7 +395,7 @@ const icons = {
     </g>
   ),
   replay: (
-    <path d="M20,12a8,8,0,1,1-2.59-5.87L14.57,9h7V2L18.86,4.73A10,10,0,1,0,22,12Z" fillRule="evenodd"/>
+    <path d="M20,12a8,8,0,1,1-2.59-5.87L14.57,9h7V2L18.86,4.73A10,10,0,1,0,22,12Z" fillRule="evenodd" />
   ),
   search: (
     <path d="M16.35,14.94a8.08,8.08,0,1,0-1.43,1.4l5.37,5.37,1.41-1.41ZM10,16a6,6,0,1,1,6-6A6,6,0,0,1,10,16Z" />
@@ -413,7 +414,7 @@ const icons = {
   ),
   stop_solo: (
     <g>
-      <rect x="3.04" y="3" width="18" height="18"/>
+      <rect x="3.04" y="3" width="18" height="18" />
     </g>
   ),
   text_size: (
@@ -444,8 +445,8 @@ const icons = {
   ),
   trash: (
     <g>
-      <path d="M6,21a1,1,0,0,0,1,1H17a1,1,0,0,0,1-1V7H6Z"/>
-      <path d="M18,3H14V2H9.92V3H6A1,1,0,0,0,5,4V6H19V4A1,1,0,0,0,18,3Z"/>
+      <path d="M6,21a1,1,0,0,0,1,1H17a1,1,0,0,0,1-1V7H6Z" />
+      <path d="M18,3H14V2H9.92V3H6A1,1,0,0,0,5,4V6H19V4A1,1,0,0,0,18,3Z" />
     </g>
   ),
   trending: (
@@ -462,7 +463,7 @@ const icons = {
   ),
   unlock: (
     <g>
-      <path d="M18,10H10V6a2,2,0,1,1,4,0V7h2V6A4,4,0,1,0,8,6v4H6a1,1,0,0,0-1,1V21a1,1,0,0,0,1,1H18a1,1,0,0,0,1-1V11A1,1,0,0,0,18,10Z"/>
+      <path d="M18,10H10V6a2,2,0,1,1,4,0V7h2V6A4,4,0,1,0,8,6v4H6a1,1,0,0,0-1,1V21a1,1,0,0,0,1,1H18a1,1,0,0,0,1-1V11A1,1,0,0,0,18,10Z" />
     </g>
   ),
   video: (
@@ -488,7 +489,7 @@ const icons = {
     )
 };
 
-const MLIcon = (props) => {
+function MLIcon(props) {
   let ariaLabelledBy;
   let titleId;
   let descId;
@@ -500,11 +501,11 @@ const MLIcon = (props) => {
   } = props;
 
   if (title) {
-    ariaLabelledBy = `${title}`;
+    ariaLabelledBy = `${ title }`;
   }
 
   if (desc) {
-    ariaLabelledBy += ` ${desc}`;
+    ariaLabelledBy += ` ${ desc }`;
   }
 
   if (hidden) {
@@ -512,13 +513,15 @@ const MLIcon = (props) => {
   }
 
   return (
-    <svg className={ className }
+    <svg
+      className={ className }
       width={ width }
       height={ height }
       viewBox={ viewBox }
       role={ role }
       fill={ fill }
-      aria-labelledby={ ariaLabelledBy }>
+      aria-labelledby={ ariaLabelledBy }
+    >
       {title
         ? <title id={ titleId }>{ title }</title>
         : null
@@ -529,7 +532,7 @@ const MLIcon = (props) => {
         : null
       }
 
-      <g transform={`scale( ${scale} )`}>>
+      <g transform={ `scale( ${ scale } )` }>
         { icons[type] }
       </g>
     </svg>
@@ -545,8 +548,11 @@ MLIcon.defaultProps = {
   scale: 1,
   fill: '#ffffff',
   role: 'img',
+  tabIndex: '0',
   title: '',
   desc: '',
+  href: '',
+  onClick: () => {},
   hidden: false
 };
 MLIcon.listIcons = Object.keys(icons);
@@ -554,6 +560,7 @@ MLIcon.listIcons = Object.keys(icons);
 MLIcon.propTypes = {
   type: PropTypes.string.isRequired,
   title: PropTypes.string,
+  desc: PropTypes.string,
   className: PropTypes.string,
   fill: PropTypes.string,
   role: PropTypes.string,
