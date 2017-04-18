@@ -1,6 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import { mount, shallow, render } from 'enzyme';
-import Button from './Button.js';
+import Button from './Button';
 
 describe('/components/Button', () => {
   it('should have props for title and onClick', () => {
@@ -8,7 +9,7 @@ describe('/components/Button', () => {
     expect(wrapper.props().title).toBe.defined;
     expect(wrapper.props().onClick).toBe.defined;
   });
-  it('should be clickable', () => {
+  it('should trigger onClick function when clicked', () => {
     const clickMock = jest.fn();
     const wrapper = mount(<Button title="alert" onClick={ clickMock } />);
     wrapper.simulate('click');

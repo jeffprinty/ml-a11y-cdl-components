@@ -4,7 +4,7 @@
   "description": "Accessible react components that comply with the Macmillan Learning CDL",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base ./demo/ --hot --history-api-fallback",
+    "start": "webpack-dev-server --colors --content-base ./demo/ --hot --history-api-fallback",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
