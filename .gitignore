@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+.npmignore
+.npmrc
+.babelrc
+.eslintrc
+
+.DS_Store
+.idea
+recordsPath.json
+
+comMsg.md
+comMsg.txt
+
+build/*
+dist/*
+*.tgz

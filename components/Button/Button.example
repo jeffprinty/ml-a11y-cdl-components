@@ -1,0 +1,9 @@
+<div>
+  <MLButton title='Primary ' primary />
+  <MLButton title='Secondary' />
+  <MLButton title='Styled' style={{ backgroundColor: Colors.medium_orange }} />
+  <hr/>
+  <MLButton icon='edit' title='Edit' primary />
+  <MLButton icon='arrow_left' title='Arrow' primary />
+  <MLButton icon='cancel' title='Cancel' />
+</div>
