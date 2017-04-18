@@ -1,10 +1,10 @@
-const webpack = require('webpack')
-const path = require('path')
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   devtool: 'source-map',
   entry: {
-    'app': [
+    app: [
       'babel-polyfill',
       'react-hot-loader/patch',
       './src/index'
@@ -14,14 +14,25 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].js'
   },
+  resolve: {
+    extensions: [ '*', '.js', '.jsx' ]
+  },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: ['babel-loader', 'eslint-loader']
+        loader: [ 'babel-loader', 'eslint-loader' ]
       }
     ]
-  }
-}
+  },
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        eslint: {
+          configFile: './.eslintrc'
+        }
+      }
+    })
+  ]
+};

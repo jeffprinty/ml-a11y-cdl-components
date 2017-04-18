@@ -1053,6 +1053,12 @@
       "resolved": "https://registry.npmjs.org/constants-browserify/-/constants-browserify-1.0.0.tgz",
       "dev": true
     },
+    "contains-path": {
+      "version": "0.1.0",
+      "from": "contains-path@>=0.1.0 <0.2.0",
+      "resolved": "https://registry.npmjs.org/contains-path/-/contains-path-0.1.0.tgz",
+      "dev": true
+    },
     "content-disposition": {
       "version": "0.5.2",
       "from": "content-disposition@0.5.2",
@@ -1520,6 +1526,30 @@
         }
       }
     },
+    "eslint-config-standard": {
+      "version": "10.2.1",
+      "from": "eslint-config-standard@latest",
+      "resolved": "https://registry.npmjs.org/eslint-config-standard/-/eslint-config-standard-10.2.1.tgz",
+      "dev": true
+    },
+    "eslint-config-standard-jsx": {
+      "version": "3.3.0",
+      "from": "eslint-config-standard-jsx@>=3.0.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/eslint-config-standard-jsx/-/eslint-config-standard-jsx-3.3.0.tgz",
+      "dev": true
+    },
+    "eslint-config-standard-react": {
+      "version": "4.3.0",
+      "from": "https://registry.npmjs.org/eslint-config-standard-react/-/eslint-config-standard-react-4.3.0.tgz",
+      "resolved": "https://registry.npmjs.org/eslint-config-standard-react/-/eslint-config-standard-react-4.3.0.tgz",
+      "dev": true
+    },
+    "eslint-import-resolver-node": {
+      "version": "0.2.3",
+      "from": "eslint-import-resolver-node@>=0.2.0 <0.3.0",
+      "resolved": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.2.3.tgz",
+      "dev": true
+    },
     "eslint-loader": {
       "version": "1.7.1",
       "from": "eslint-loader@>=1.7.1 <2.0.0",
@@ -1534,9 +1564,55 @@
         }
       }
     },
+    "eslint-module-utils": {
+      "version": "2.0.0",
+      "from": "eslint-module-utils@>=2.0.0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/eslint-module-utils/-/eslint-module-utils-2.0.0.tgz",
+      "dev": true,
+      "dependencies": {
+        "debug": {
+          "version": "2.2.0",
+          "from": "debug@2.2.0",
+          "resolved": "https://registry.npmjs.org/debug/-/debug-2.2.0.tgz",
+          "dev": true
+        },
+        "ms": {
+          "version": "0.7.1",
+          "from": "ms@0.7.1",
+          "resolved": "https://registry.npmjs.org/ms/-/ms-0.7.1.tgz",
+          "dev": true
+        }
+      }
+    },
+    "eslint-plugin-import": {
+      "version": "2.2.0",
+      "from": "eslint-plugin-import@latest",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-import/-/eslint-plugin-import-2.2.0.tgz",
+      "dev": true,
+      "dependencies": {
+        "doctrine": {
+          "version": "1.5.0",
+          "from": "doctrine@1.5.0",
+          "resolved": "https://registry.npmjs.org/doctrine/-/doctrine-1.5.0.tgz",
+          "dev": true
+        }
+      }
+    },
+    "eslint-plugin-node": {
+      "version": "4.2.2",
+      "from": "eslint-plugin-node@latest",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-node/-/eslint-plugin-node-4.2.2.tgz",
+      "dev": true
+    },
+    "eslint-plugin-promise": {
+      "version": "3.5.0",
+      "from": "eslint-plugin-promise@latest",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.5.0.tgz",
+      "dev": true
+    },
     "eslint-plugin-react": {
       "version": "6.10.3",
-      "from": "eslint-plugin-react@latest",
+      "from": "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-6.10.3.tgz",
       "resolved": "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-6.10.3.tgz",
       "dev": true,
       "dependencies": {
@@ -1547,6 +1623,12 @@
           "dev": true
         }
       }
+    },
+    "eslint-plugin-standard": {
+      "version": "3.0.1",
+      "from": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-3.0.1.tgz",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-3.0.1.tgz",
+      "dev": true
     },
     "espree": {
       "version": "3.4.1",
@@ -3598,6 +3680,12 @@
       "resolved": "https://registry.npmjs.org/lodash.bind/-/lodash.bind-4.2.1.tgz",
       "dev": true
     },
+    "lodash.cond": {
+      "version": "4.5.2",
+      "from": "lodash.cond@>=4.3.0 <5.0.0",
+      "resolved": "https://registry.npmjs.org/lodash.cond/-/lodash.cond-4.5.2.tgz",
+      "dev": true
+    },
     "lodash.defaults": {
       "version": "4.2.0",
       "from": "lodash.defaults@>=4.0.1 <5.0.0",
@@ -4164,6 +4252,12 @@
       "version": "1.0.0",
       "from": "pkg-dir@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/pkg-dir/-/pkg-dir-1.0.0.tgz",
+      "dev": true
+    },
+    "pkg-up": {
+      "version": "1.0.0",
+      "from": "pkg-up@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/pkg-up/-/pkg-up-1.0.0.tgz",
       "dev": true
     },
     "pluralize": {

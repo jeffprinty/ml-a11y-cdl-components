@@ -6,6 +6,6 @@ const Root = () => (
     Hello React Hot Loader!
     <Button title="alert" onClick={ () => {} } />
   </div>
-)
+);
 
-export default Root
+export default Root;
