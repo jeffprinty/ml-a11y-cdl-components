@@ -5,11 +5,13 @@ const sourcePath = path.join(__dirname, './demo');
 
 module.exports = {
   devtool: 'source-map',
-  entry: [
-    'babel-polyfill',
-    'react-hot-loader/patch',
-    './demo/src/index'
-  ],
+  entry: {
+    app: [
+      'babel-polyfill',
+      'react-hot-loader/patch',
+      './demo/src/index'
+    ]
+  },
   output: {
     path: path.resolve(__dirname, './build'),
     publicPath: '/',
