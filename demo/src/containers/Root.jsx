@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../../../components/Button/Button';
 import Column from '../../../components/Layout/Column';
+import Alert from '../../../components/Alert/Alert';
 
 const Container = styled.div`
   display: flex;
@@ -22,6 +23,12 @@ const Root = () => (
       </Title>
     </Column>
     <Column md={ 9 }>
+      <div>
+        <Alert alertType="alert" text={ <div>Text within a div passed as a prop <a href="/">link</a></div> } /><br />
+        <Alert alertType="warning" text="Plain old text" /><br />
+        <Alert alertType="error" text={ <div>Error text <a href="/">link</a></div> } /><br />
+        <Alert alertType="success" text={ <div>Success text <a href="/">link</a></div> } /><br />
+      </div>
       <h2>Button</h2>
       <dl>
         <dt>Button</dt><dd><Button title="Button" onClick={ clickButton } /></dd>

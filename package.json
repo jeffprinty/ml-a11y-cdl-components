@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --colors --content-base ./demo/ --hot --history-api-fallback",
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack --config webpack.demo.config.js",
     "clean": "rimraf node_modules/gh-pages/.cache && rimraf build/",
     "deploy": "npm run clean&&npm run build&&gh-pages -d build -r https://github.com/mlazul/ml-a11y-cdl-components",
     "test": "jest",
