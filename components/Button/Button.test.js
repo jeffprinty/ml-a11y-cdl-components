@@ -9,6 +9,10 @@ describe('/components/Button', () => {
     expect(wrapper.props().title).toBe.defined;
     expect(wrapper.props().onClick).toBe.defined;
   });
+  it('should render an a tag if button is not disabled', () => {
+    const wrapper = mount(<Button title="Button" />);
+    console.log("wrapper", wrapper);
+  });
   it('should trigger onClick function when clicked', () => {
     const clickMock = jest.fn();
     const wrapper = mount(<Button title="alert" onClick={ clickMock } />);

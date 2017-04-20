@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import randomize from 'randomatic';
 
 const icons = {
   alert_outline: (
@@ -490,9 +491,8 @@ const icons = {
 };
 
 function MLIcon(props) {
-  let ariaLabelledBy;
-  let titleId;
   let descId;
+  const ariaLabelledBy = randomize('Aa0', 5);
 
   const {
     type, title, desc, role,
@@ -500,13 +500,6 @@ function MLIcon(props) {
     fill, className, hidden
   } = props;
 
-  if (title) {
-    ariaLabelledBy = `${ title }`;
-  }
-
-  if (desc) {
-    ariaLabelledBy += ` ${ desc }`;
-  }
 
   if (hidden) {
     return null;
@@ -523,7 +516,7 @@ function MLIcon(props) {
       aria-labelledby={ ariaLabelledBy }
     >
       {title
-        ? <title id={ titleId }>{ title }</title>
+        ? <title id={ ariaLabelledBy }>{ title }</title>
         : null
       }
 
@@ -532,7 +525,7 @@ function MLIcon(props) {
         : null
       }
 
-      <g transform={ `scale( ${ scale } )` }>
+      <g transform={ `scale( ${scale} )` }>
         { icons[type] }
       </g>
     </svg>
