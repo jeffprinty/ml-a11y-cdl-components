@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --colors --content-base ./demo/ --hot --history-api-fallback",
+    "build": "webpack --config webpack.config.js",
+    "clean": "rimraf node_modules/gh-pages/.cache && rimraf build/",
+    "deploy": "npm run clean&&npm run build&&gh-pages -d build -r https://github.com/mlazul/ml-a11y-cdl-components",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -47,6 +50,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
+    "gh-pages": "^0.12.0",
     "jest": "^19.0.2",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",

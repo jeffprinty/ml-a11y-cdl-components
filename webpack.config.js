@@ -3,15 +3,14 @@ const path = require('path');
 
 module.exports = {
   devtool: 'source-map',
-  entry: {
-    app: [
-      'babel-polyfill',
-      'react-hot-loader/patch',
-      './demo/src/index'
-    ]
-  },
+  entry: [
+    'babel-polyfill',
+    'react-hot-loader/patch',
+    './demo/src/index'
+  ],
   output: {
-    path: path.resolve(__dirname, './demo/dist'),
+    path: path.resolve(__dirname, './build'),
+    publicPath: '/',
     filename: '[name].js'
   },
   resolve: {
