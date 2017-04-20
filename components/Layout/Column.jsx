@@ -55,8 +55,8 @@ Column.propTypes = {
   sm: columnProps,
   md: columnProps,
   lg: columnProps,
-  className: PropTypes.oneOfType([ PropTypes.element, PropTypes.array ]),
-  children: PropTypes.element.isRequired
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([ PropTypes.element, PropTypes.array ]).isRequired
 };
 
 export default Column;

@@ -39,16 +39,16 @@ const AlertStyle = css`
   box-sizing: border-box;
 `;
 
-const AlertIcon = styled.div`
-  position: absolute;
-  top: 7px;
-  left: 13px;
-`;
-
 const AlertBox = styled.div`
   ${AlertStyle}
   border: 1px solid ${props => alertVariants[props.alertType].secondary};
   background-color: ${props => alertVariants[props.alertType].bgColor};
+`;
+
+const AlertIcon = styled.div`
+  position: absolute;
+  top: 7px;
+  left: 13px;
 `;
 
 const AlertText = styled.span`
@@ -67,8 +67,7 @@ const AlertText = styled.span`
 `;
 
 
-function Alert({ text, alertType, icon }) {
-  console.log('text, alertType, icon', text, alertType, icon);
+function Alert({ text, alertType }) {
   const ariaDescribedBy = randomize('Aa0', 5);
   return (
     <AlertBox alertType={ alertType }>
@@ -76,7 +75,7 @@ function Alert({ text, alertType, icon }) {
         <Icon
           aria-describedby={ ariaDescribedBy }
           type={ alertVariants[alertType].iconType }
-          title={ alertType }
+          title={ `${alertType} icon` }
           fill={ alertVariants[alertType].secondary }
         />
       </AlertIcon>
@@ -95,7 +94,6 @@ Alert.propTypes = {
     PropTypes.element,
     PropTypes.string
   ]),
-  icon: PropTypes.string.isRequired,
   alertType: PropTypes.string.isRequired
 };
 

@@ -12,7 +12,7 @@ const Title = styled.h1`
   
 `;
 const clickButton = (e) => {
-  console.log(e.target);
+  console.log(e.target); // eslint-disable-line
 };
 
 const Root = () => (
