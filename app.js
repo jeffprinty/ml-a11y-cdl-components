@@ -45238,8 +45238,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  width: 80%;\n  height: 44px;\n  line-height: 42px;\n  font-size: 14px;\n  color: ', ';\n  box-sizing: border-box;\n'], ['\n  position: relative;\n  width: 80%;\n  height: 44px;\n  line-height: 42px;\n  font-size: 14px;\n  color: ', ';\n  box-sizing: border-box;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  position: absolute;\n  top: 7px;\n  left: 13px;\n'], ['\n  position: absolute;\n  top: 7px;\n  left: 13px;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  ', '\n  border: 1px solid ', ';\n  background-color: ', ';\n'], ['\n  ', '\n  border: 1px solid ', ';\n  background-color: ', ';\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  ', '\n  border: 1px solid ', ';\n  background-color: ', ';\n'], ['\n  ', '\n  border: 1px solid ', ';\n  background-color: ', ';\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  position: absolute;\n  top: 7px;\n  left: 13px;\n'], ['\n  position: absolute;\n  top: 7px;\n  left: 13px;\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n  display: inline-block;\n  padding-left: 45px;\n  box-sizing: border-box;\n  a, a:link, a:active, a:visited {\n    color: ', '; \n    text-decoration: underline;\n    margin-left: 3px;\n    &:hover {\n      opacity: 0.8;\n      text-decoration: underline;\n    }\n  }\n'], ['\n  display: inline-block;\n  padding-left: 45px;\n  box-sizing: border-box;\n  a, a:link, a:active, a:visited {\n    color: ', '; \n    text-decoration: underline;\n    margin-left: 3px;\n    &:hover {\n      opacity: 0.8;\n      text-decoration: underline;\n    }\n  }\n']);
 
 var _react = __webpack_require__(77);
@@ -45295,22 +45295,20 @@ var alertVariants = {
 
 var AlertStyle = (0, _styledComponents.css)(_templateObject, _colors2.default.blackish);
 
-var AlertIcon = _styledComponents2.default.div(_templateObject2);
-
-var AlertBox = _styledComponents2.default.div(_templateObject3, AlertStyle, function (props) {
+var AlertBox = _styledComponents2.default.div(_templateObject2, AlertStyle, function (props) {
   return alertVariants[props.alertType].secondary;
 }, function (props) {
   return alertVariants[props.alertType].bgColor;
 });
 
+var AlertIcon = _styledComponents2.default.div(_templateObject3);
+
 var AlertText = _styledComponents2.default.span(_templateObject4, _colors2.default.aqua);
 
 function Alert(_ref) {
   var text = _ref.text,
-      alertType = _ref.alertType,
-      icon = _ref.icon;
+      alertType = _ref.alertType;
 
-  console.log('text, alertType, icon', text, alertType, icon);
   var ariaDescribedBy = (0, _randomatic2.default)('Aa0', 5);
   return _react2.default.createElement(
     AlertBox,
@@ -45321,7 +45319,7 @@ function Alert(_ref) {
       _react2.default.createElement(_Icon2.default, {
         'aria-describedby': ariaDescribedBy,
         type: alertVariants[alertType].iconType,
-        title: alertType,
+        title: alertType + ' icon',
         fill: alertVariants[alertType].secondary
       })
     ),
@@ -45340,7 +45338,6 @@ Alert.defaultProps = {
 
 Alert.propTypes = {
   text: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.string]),
-  icon: _propTypes2.default.string.isRequired,
   alertType: _propTypes2.default.string.isRequired
 };
 
@@ -45431,8 +45428,8 @@ Column.propTypes = {
   sm: columnProps,
   md: columnProps,
   lg: columnProps,
-  className: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.array]),
-  children: _propTypes2.default.element.isRequired
+  className: _propTypes2.default.string,
+  children: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.array]).isRequired
 };
 
 exports.default = Column;
@@ -45496,7 +45493,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 var Container = __WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */].div(_templateObject);
 var Title = __WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */].h1(_templateObject2);
 var clickButton = function clickButton(e) {
-  console.log(e.target);
+  console.log(e.target); // eslint-disable-line
 };
 
 var Root = function Root() {
