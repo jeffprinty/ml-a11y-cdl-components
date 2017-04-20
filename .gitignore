@@ -12,6 +12,4 @@ recordsPath.json
 comMsg.md
 comMsg.txt
 
-build/*
-dist/*
 *.tgz

@@ -1,5 +1,7 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const sourcePath = path.join(__dirname, './demo');
 
 module.exports = {
   devtool: 'source-map',
@@ -33,6 +35,11 @@ module.exports = {
           fix: true
         }
       }
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(sourcePath, 'index.html'),
+      path: './build',
+      filename: 'index.html'
     })
   ]
 };
