@@ -6,11 +6,11 @@
 * [Alert](https://macmillanlearning.atlassian.net/wiki/pages/viewpage.action?pageId=69402693)
 * [Breadcrumbs](https://macmillanlearning.atlassian.net/wiki/display/CDL/Breadcrumbs)
 * [Card](https://macmillanlearning.atlassian.net/wiki/display/CDL/Cards)
-* [Checkbox]()
+* Checkbox
 * [Dialog](https://macmillanlearning.atlassian.net/wiki/display/CDL/Dialogs)
 * [Form](https://macmillanlearning.atlassian.net/wiki/display/CDL/Forms)
-* [Input]()
-* [Layout]()
+* Input
+* Layout
 * [Menu](https://macmillanlearning.atlassian.net/wiki/display/CDL/Menus)
 * [Pagination](https://macmillanlearning.atlassian.net/wiki/display/CDL/Pagination)
 * [Step Indicators](https://macmillanlearning.atlassian.net/wiki/display/CDL/Step+Indicators)
@@ -18,7 +18,7 @@
 * [Tabs](https://macmillanlearning.atlassian.net/wiki/display/CDL/Tabs)
 * [Title Bar](https://macmillanlearning.atlassian.net/wiki/display/CDL/Title+Bar)
 * [Tooltip](https://macmillanlearning.atlassian.net/wiki/pages/viewpage.action?pageId=72155528)
-* [Toggle]()
+* Toggle
 * [Tree Menu](https://macmillanlearning.atlassian.net/wiki/display/CDL/Tree+Menus)
 
 ## Done
