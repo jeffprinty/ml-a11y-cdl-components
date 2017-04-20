@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --colors --content-base ./demo/ --hot --history-api-fallback",
-    "build": "webpack --config webpack.demo.config.js",
+    "build": "webpack --config webpack.config.js",
     "clean": "rimraf node_modules/gh-pages/.cache && rimraf build/",
     "deploy": "npm run clean&&npm run build&&gh-pages -d build -r https://github.com/mlazul/ml-a11y-cdl-components",
     "test": "jest",
@@ -42,6 +42,7 @@
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-1": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
     "eslint": "^3.19.0",
