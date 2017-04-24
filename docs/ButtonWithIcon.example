@@ -1,0 +1,8 @@
+<div>
+  <h3>Primary Button with Icon</h3>
+  <Button icon="heart_outline" title="Button" onClick={ () => {} } primary />
+  <Button icon="heart_outline" title="Button" onClick={ () => {} } primary disabled />
+  <h3>Standard Button with Icon</h3>
+  <Button icon="help_outline" title="Button" onClick={ () => {} } />
+  <Button icon="help_outline" title="Button" onClick={ () => {} } disabled />
+</div>

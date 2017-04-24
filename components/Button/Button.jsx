@@ -117,7 +117,7 @@ function Button(props) {
       icon={ icon }
       href={ href }
       primary={ primary }
-      onKeyPress={ handleClick }
+      onKeyDown={ handleClick }
       onClick={ handleClick }
       tabIndex={ 0 }
     >

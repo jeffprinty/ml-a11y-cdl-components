@@ -1,0 +1,8 @@
+<div>
+  <h3>Primary Button</h3>
+  <Button title="Button" onClick={ () => {} } primary />
+  <Button title="Button" onClick={ () => {} } primary disabled />
+  <h3>Standard Button</h3>
+  <Button title="Button" onClick={ () => {} } />
+  <Button title="Button" onClick={ () => {} } disabled />
+</div>

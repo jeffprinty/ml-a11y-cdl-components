@@ -51,6 +51,12 @@ const AlertIcon = styled.div`
   left: 13px;
 `;
 
+const DismissIcon = styled.div`
+  position: absolute;
+  top: 13px;
+  right: 13px;
+`;
+
 const AlertText = styled.span`
   display: inline-block;
   padding-left: 45px;
@@ -67,10 +73,12 @@ const AlertText = styled.span`
 `;
 
 
-function Alert({ text, alertType }) {
+function Alert({ content, alertType, dismissable }) {
   const ariaDescribedBy = randomize('Aa0', 5);
   return (
-    <AlertBox alertType={ alertType }>
+    <AlertBox
+      alertType={ alertType }
+    >
       <AlertIcon>
         <Icon
           aria-describedby={ ariaDescribedBy }
@@ -79,21 +87,38 @@ function Alert({ text, alertType }) {
           fill={ alertVariants[alertType].secondary }
         />
       </AlertIcon>
-      <AlertText id={ ariaDescribedBy }>{ text }</AlertText>
+      <AlertText
+        role="alert"
+        id={ ariaDescribedBy }
+      >{ content }</AlertText>
+      { dismissable &&
+
+        <DismissIcon>
+          <Icon
+            type="x"
+            title={ 'Dismiss' }
+            width="16"
+            height="16"
+            fill={ alertVariants[alertType].secondary }
+          />
+        </DismissIcon>
+      }
     </AlertBox>
   );
 }
 
 Alert.defaultProps = {
-  text: 'Alert text',
-  alertType: 'alert'
+  content: 'Alert text',
+  alertType: 'alert',
+  dismissable: true
 };
 
 Alert.propTypes = {
-  text: PropTypes.oneOfType([
+  content: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.string
   ]),
+  dismissable: PropTypes.bool,
   alertType: PropTypes.string.isRequired
 };
 

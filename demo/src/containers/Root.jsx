@@ -1,8 +1,12 @@
-import React from 'react';
+/* eslint global-require: 0 */
+import React, { ReactDOM } from 'react';
 import styled from 'styled-components';
-import Button from '../../../components/Button/Button';
-import Column from '../../../components/Layout/Column';
-import Alert from '../../../components/Alert/Alert';
+import ReactMarkdown from 'react-markdown';
+
+import Playground from './Playground';
+
+import { Button, Column, Alert } from '../../../components';
+import { ButtonUsage, ButtonExample, ButtonWithIconExample, AlertExample } from '../../../docs';
 
 const Container = styled.div`
   display: flex;
@@ -11,35 +15,40 @@ const Container = styled.div`
 const Title = styled.h1`
   
 `;
-const clickButton = (e) => {
-  console.log(e.target); // eslint-disable-line
-};
 
 const Root = () => (
   <Container>
-    <Column md={ 3 }>
+    <Column sm={ 12 } md={ 3 } lg={ 3 }>
       <Title>
         ml-a11y-cdl-components
       </Title>
     </Column>
-    <Column md={ 9 }>
+    <Column sm={ 12 } md={ 9 } lg={ 9 }>
+      <h2>Alert</h2>
       <div>
-        <Alert alertType="alert" text={ <div>Text within a div passed as a prop <a href="/">link</a></div> } /><br />
-        <Alert alertType="warning" text="Plain old text" /><br />
-        <Alert alertType="error" text={ <div>Error text <a href="/">link</a></div> } /><br />
-        <Alert alertType="success" text={ <div>Success text <a href="/">link</a></div> } /><br />
+        <Alert alertType="alert" content={ <div>Text within a div passed as a prop <a href="/">link</a></div> } /><br />
+        <Alert alertType="warning" content="Plain old text" /><br />
+        <Alert alertType="error" content={ <div>Error text <a href="/">link</a></div> } /><br />
+        <Alert alertType="success" content={ <div>Success text <a href="/">link</a></div> } /><br />
       </div>
+      <Playground
+        className="playground"
+        codeText={ AlertExample }
+        scope={{ React, ReactDOM, Alert }}
+      />
+      <ReactMarkdown source={ ButtonUsage } />
       <h2>Button</h2>
-      <dl>
-        <dt>Button</dt><dd><Button title="Button" onClick={ clickButton } /></dd>
-        <dt>Disabled Button</dt><dd><Button title="Button" onClick={ clickButton } disabled /></dd>
-        <dt>Primary</dt><dd><Button title="Button" onClick={ clickButton } primary /></dd>
-        <dt>Disabled Primary</dt><dd><Button title="Button" onClick={ clickButton } primary disabled /></dd>
-        <dt>Button with Icon</dt><dd><Button title="Button" icon="stop" onClick={ clickButton } /></dd>
-        <dt>Disabled Button with Icon</dt><dd><Button title="Button" icon="stop" onClick={ clickButton } disabled /></dd>
-        <dt>Primary Button with Icon</dt><dd><Button title="Button" icon="tools" onClick={ clickButton } primary /></dd>
-        <dt>Disabled Primary Button with Icon</dt><dd><Button title="Button" icon="tools" onClick={ clickButton } primary disabled /></dd>
-      </dl>
+      <Playground
+        className="playground"
+        codeText={ ButtonExample }
+        scope={{ React, ReactDOM, Button }}
+      />
+      <h2>Button with Icon</h2>
+      <Playground
+        className="playground"
+        codeText={ ButtonWithIconExample }
+        scope={{ React, ReactDOM, Button }}
+      />
     </Column>
   </Container>
 );

@@ -24,9 +24,25 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(example|md)$/,
+        use: 'raw-loader'
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: [ 'babel-loader', 'eslint-loader' ]
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets:  ['es2015', 'stage-0']
+
+          }
+          
+        }
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
       }
     ]
   },
@@ -46,6 +62,11 @@ module.exports = {
       template: path.join(sourcePath, 'index.html'),
       path: './build',
       filename: 'index.html'
+    
     })
-  ]
+  ],
+  devServer: {
+    hot: true,
+    contentBase: './demo'
+  }
 };

@@ -1,0 +1,1 @@
+<Alert alertType="alert" content={ <div>Text within a div passed as a prop <a href="/">link</a></div> } />
