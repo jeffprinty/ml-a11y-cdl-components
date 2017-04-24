@@ -33,3 +33,155 @@ ul {
   height: 100%;
   width: 100%;
 }
+
+.container {
+  height:100%;
+  background-color: #F3F3F3;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  min-height: 450px;
+  margin: 0 auto;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background-color: #FFF;
+  
+}
+.playground {
+  display: flex;
+}
+.playground .playgroundCode {
+  flex-direction: row;
+  flex: 1;
+  order: 2;
+}
+.playground .playgroundPreview {
+  flex-direction: row;
+  flex:1;
+  order: 1;
+  padding: 5px;
+}
+/*pre {
+    margin-bottom: 1em;
+    padding: 5px;
+    padding-bottom: 20px !ie7;
+    width: auto;
+    width: 650px !ie7;
+    max-height: 600px;
+    overflow: auto;
+    font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+    font-size: 13px;
+    background-color: #eff0f1;
+}*/
+
+h2 {
+  clear: both;
+  padding: 5px 0;
+  border-bottom: 1px solid #e4e6e8;
+  margin-bottom: 1em;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #152a34;
+}
+
+.colorGrid {
+  padding: 8px;
+  lost-column: 1/5 5 20px;
+}
+
+.iconGrid {
+
+  justify-content: space-between;
+}
+
+.iconWrap {
+  width: 140px;
+  float: left;
+  text-align: center;
+  padding: 10px;
+  font-size: smaller;
+}
+.iconStack {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+.iconName {
+  display: block;
+}
+.stackedIcon {
+  display:block;
+}
+.brand {
+  color:  red;
+}
+
+.snippets {
+  width: 500px;
+  padding-right: 10px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.snippet {
+  color: lightblue;
+}
+.snippet:hover {
+  background-color: green;
+  cursor: pointer;
+}
+
+.mlreader-container {
+  display:flex;
+  flex-flow: column nowrap;
+  flex:1;
+  height:100%;
+  margin: 0;
+  padding:0;
+}
+.markerWrap {
+  background-color: #152A34;
+  border-radius: 2px;
+  padding: 8px 8px;
+vertical-align: middle;
+}
+.marker {
+  display: inline;  
+}
+.eSnippetContainer {
+  height: 400px;
+  position: relative;
+}
+.demoRow {
+  display: flex;
+  
+}
+.demoExample, .demoCode {
+  flex-direction: row;
+  flex: 1;
+  align-self: flex-start;
+
+}
+.demoExample {
+  padding: 5px;
+}
+.demoCode {
+  overflow-x: auto;
+
+}
+pre {
+  margin: 0;
+}
