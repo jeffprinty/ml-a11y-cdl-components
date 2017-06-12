@@ -8,7 +8,7 @@
     "build": "webpack --config webpack.config.js",
     "clean": "rimraf node_modules/gh-pages/.cache && rimraf build/",
     "deploy": "npm run clean&&npm run build&&gh-pages -d build -r https://github.com/mlazul/ml-a11y-cdl-components",
-    "test": "jest",
+    "test": "jest --verbose",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint:css": "stylelint \"./components/**/*.js\""

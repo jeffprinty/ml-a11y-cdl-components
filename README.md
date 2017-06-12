@@ -1,7 +1,7 @@
 # ml-a11y-cdl-components
 
 
-## Components TODO
+## Components
 ### [Accordion](https://macmillanlearning.atlassian.net/wiki/display/CDL/Accordions)
 ### [Alert](https://macmillanlearning.atlassian.net/wiki/pages/viewpage.action?pageId=69402693)
 
@@ -10,6 +10,8 @@ Alerts are used the tell the user important information related to their current
 **TODO/Considerations**
 * CDL does not specify animations, how should alerts appear?
 * Should have its own state?
+* How to manage delay? Allow custom delay?
+* 
 
 **Props**
 
@@ -18,14 +20,22 @@ Alerts are used the tell the user important information related to their current
 *dismissable*: `boolean` defaults to `true`  
 
 ```
-<Alert dismissable={ true } alertType="alert" text={ <div>Text within a div passed as a prop <a href="/">link</a></div> } /><br />
-<Alert dismissable={ false } alertType="warning" text="Plain old text" /><br />
-<Alert dismissable={ true } alertType="error" text={ <div>Error text <a href="/">link</a></div> } /><br />
-<Alert dismissable={ true } alertType="success" text={ <div>Success text <a href="/">link</a></div> } /><br />
+<Alert alertType="alert" dismissable={ true } text={ <div>Text within a div passed as a prop <a href="/">link</a></div> } /><br />
+<Alert alertType="warning" dismissable={ false } text="Plain old text" /><br />
+<Alert alertType="error" dismissable={ true } text={ <div>Error text <a href="/">link</a></div> } /><br />
+<Alert alertType="success" dismissable={ true } text={ <div>Success text <a href="/">link</a></div> } /><br />
 ```
 [IMAGE]
+
 ### [Breadcrumbs](https://macmillanlearning.atlassian.net/wiki/display/CDL/Breadcrumbs)
 ### [Button](https://macmillanlearning.atlassian.net/wiki/display/CDL/Buttons)
+
+### Todo
+
+* Text buttons
+* Button group
+* Tab group
+
 ### [Card](https://macmillanlearning.atlassian.net/wiki/display/CDL/Cards)
 ### Checkbox
 ### [Dialog](https://macmillanlearning.atlassian.net/wiki/display/CDL/Dialogs)
@@ -59,7 +69,7 @@ npm install
 cd demo
 npm start
 ```
-
+Open `0.0.0.0:8080` to view demo server
 
 ## Running the tests
 
@@ -69,7 +79,7 @@ npm run test
 
 ## Demo
 
-Run the Demo locally for usage examples or visit [https://mlazul.github.io/ml-a11y-cdl-components/](https://mlazul.github.io/ml-a11y-cdl-components/)
+Run the Demo locally for usage examples or [view the demo online](https://jeffprinty.github.io/ml-a11y-cdl-components/)
 
 ## Dependencies
 

@@ -23,7 +23,7 @@ const buttonStyle = css`
   
 `;
 
-const ActiveButton = styled.a`
+const CDLButton = styled.button`
   ${buttonStyle}
   background-color: ${props => props.primary ? Colors.aqua : 'transparent'}
   color: ${props => props.primary ? Colors.pure_white : Colors.aqua};
@@ -31,26 +31,24 @@ const ActiveButton = styled.a`
   padding: ${props => props.icon ? '0 15px 0 12px' : '0 15px'};
   border: ${props => props.primary ? 'none' : `1px solid ${Colors.aqua}`};
   
-  cursor: pointer;
-  
+  cursor: default;
+  border: 1px solid #dddddd;
   &:hover {
     opacity: 0.8;
     background: ${props => props.primary ? Colors.aqua : 'rgba(0, 117, 142, 0.1)'};
   }
-
+  &:disabled {
+    background-color: ${Colors.light_gray};
+    color: ${Colors.pure_white};
+    cursor: not-allowed;
+    &:hover {
+      opacity: 1;
+    }
+  }
   &:focus {
     outline: none;
     box-shadow: 0 0 6px rgba(0,117,142,1);
   }
-`;
-
-const DisabledButton = styled.button`
-  ${buttonStyle}
-
-  cursor: default;
-  color: ${props => props.primary ? Colors.pure_white : Colors.light_gray};
-  background-color: ${props => props.primary ? Colors.light_gray : 'transparent'}
-  border: 1px solid #dddddd;
 `;
 
 const Title = styled.span`
@@ -65,21 +63,23 @@ const IconWrap = styled.span`
 `;
 
 function Button(props) {
-  const { onClick, icon, title, primary, href, disabled } = props;
+  const { onClick, icon, title, primary, href, ariaLabelledBy, disabled } = props;
 
   const handleClick = (event) => {
+    const { keyCode } = event;
     if (href === null) {
       event.preventDefault();
     }
+    if (keyCode && keyCode !== 13 && keyCode !== 32) return;
 
     if (onClick) onClick(event);
   };
 
   // Basic
-  let iconFill = disabled ? Colors.light_gray : Colors.aqua;
+  let iconFill = Colors.aqua;
 
   // Primary
-  if (primary) {
+  if (primary || disabled) {
     iconFill = Colors.pure_white;
   }
 
@@ -93,45 +93,33 @@ function Button(props) {
     </IconWrap>
   );
 
-  const ariaLabelledBy = randomize('Aa0', 5);
   const renderLabel = () => <Title id={ ariaLabelledBy } icon={ icon }>{ title }</Title>;
 
-  if (disabled) {
-    return (
-      <DisabledButton
-        aria-labelledby={ ariaLabelledBy }
-        aria-disabled={ disabled }
-        tabIndex={ 0 }
-        primary={ primary }
-        { ...props }
-      >
-        { icon && renderIcon() }
-        { renderLabel() }
-      </DisabledButton>
-    );
-  }
-
+  const buttonProps = {
+    disabled,
+    icon,
+    href,
+    primary
+  };
   return (
-    <ActiveButton
+    <CDLButton
       role={ href ? undefined : 'button' }
-      icon={ icon }
-      href={ href }
-      primary={ primary }
       onKeyDown={ handleClick }
       onClick={ handleClick }
       tabIndex={ 0 }
+      { ...buttonProps }
     >
       { icon && renderIcon() }
       { renderLabel() }
-    </ActiveButton>
+    </CDLButton>
   );
 }
 
 Button.defaultProps = {
   btnClass: 'default',
-  btnType: '',
   href: null,
   icon: null,
+  ariaLabelledBy: randomize('Aa0', 5),
   onClick: () => {},
   primary: null,
   disabled: false
@@ -142,6 +130,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   primary: PropTypes.bool,
   disabled: PropTypes.bool,
+  ariaLabelledBy: PropTypes.string,
   href: PropTypes.string,
   icon: PropTypes.oneOfType([
     PropTypes.element,

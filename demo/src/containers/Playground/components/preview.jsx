@@ -26,7 +26,7 @@ class Preview extends Component {
   _compileCode = () => {
     const { code, context, noRender, scope } = this.props;
     const generateContextTypes = c => `{ ${Object.keys(c).map(val =>
-        `${val}: React.PropTypes.any.isRequired`).join(', ')} }`;
+        `${val}: PropTypes.any.isRequired`).join(', ')} }`;
 
     if (noRender) {
       return transform(`

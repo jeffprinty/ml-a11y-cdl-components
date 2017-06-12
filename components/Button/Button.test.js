@@ -9,9 +9,51 @@ describe('/components/Button', () => {
     expect(wrapper.props().title).toBe.defined;
     expect(wrapper.props().onClick).toBe.defined;
   });
-  it('should render an a tag if button is not disabled', () => {
-    const wrapper = mount(<Button title="Button" />);
-    console.log("wrapper", wrapper);
+
+  it('with href should match the snapshot when enabled', () => {
+    const wrapper = mount(
+      <Button
+        ariaLabelledBy="testButton"
+        href="http://fastgood.cheap/"
+        disabled={ false }
+        title="Button" />
+      );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('with href should match the snapshot when disabled', () => {
+    const wrapper = mount(
+      <Button
+        ariaLabelledBy="testButton"
+        href="http://fastgood.cheap/"
+        disabled={ true }
+        title="Button" />
+      );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('with onClick prop should render a button', () => {
+    const clickMock = jest.fn();
+    const wrapper = mount(
+      <Button
+        ariaLabelledBy="testButton"
+        onClick={ clickMock }
+        disabled={ true }
+        title="Button" />
+      );
+    expect(wrapper.find('button')).toHaveLength(1);
+  });
+  it('should update style on hover', () => {
+    const wrapper = mount(
+      <Button
+        ariaLabelledBy="testButton"
+        title="Button" />
+      );
+    expect(wrapper).toMatchSnapshot();
+    wrapper.simulate('mouseenter');
+    expect(wrapper).toMatchSnapshot();
+
+
   });
   it('should trigger onClick function when clicked', () => {
     const clickMock = jest.fn();
