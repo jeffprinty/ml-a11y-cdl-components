@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --colors --content-base ./demo/ --hot --history-api-fallback",
     "build": "webpack --config webpack.config.js",
     "clean": "rimraf node_modules/gh-pages/.cache && rimraf build/",
-    "deploy": "npm run clean&&npm run build&&gh-pages -d build -r https://github.com/mlazul/ml-a11y-cdl-components",
+    "deploy": "npm run clean&&npm run build&&gh-pages -d build -r https://github.com/jeffprinty/ml-a11y-cdl-components",
     "test": "jest --verbose",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -23,14 +23,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mlazul/ml-a11y-cdl-components.git"
+    "url": "git+https://github.com/jeffprinty/ml-a11y-cdl-components.git"
   },
   "author": "Macmillan Learning",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mlazul/ml-a11y-cdl-components/issues"
+    "url": "https://github.com/jeffprinty/ml-a11y-cdl-components/issues"
   },
-  "homepage": "https://github.com/mlazul/ml-a11y-cdl-components#readme",
+  "homepage": "https://github.com/jeffprinty/ml-a11y-cdl-components#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.23.1",
