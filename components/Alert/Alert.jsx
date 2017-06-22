@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { oneOfType, shape, string, element, func, bool } from 'prop-types';
 import randomize from 'randomatic';
 import styled, { css } from 'styled-components';
-
-import Colors from '../colors';
 import Icon from '../Icon/Icon';
+import Colors from '../colors';
 
 const alertVariants = {
   alert: {
@@ -39,10 +38,10 @@ const AlertStyle = css`
   box-sizing: border-box;
 `;
 
-const AlertBox = styled.div`
+const AlertWrap = styled.div`
   ${AlertStyle}
-  border: 1px solid ${props => alertVariants[props.alertType].secondary};
-  background-color: ${props => alertVariants[props.alertType].bgColor};
+  border: 1px solid ${props => alertVariants[props.type].secondary};
+  background-color: ${props => alertVariants[props.type].bgColor};
 `;
 
 const AlertIcon = styled.div`
@@ -51,7 +50,9 @@ const AlertIcon = styled.div`
   left: 13px;
 `;
 
-const DismissIcon = styled.div`
+const DismissIcon = styled.button`
+  background-color: transparent;
+  border: 0;
   position: absolute;
   top: 13px;
   right: 13px;
@@ -72,54 +73,58 @@ const AlertText = styled.span`
   }
 `;
 
-
-function Alert({ content, alertType, dismissable }) {
-  const ariaDescribedBy = randomize('Aa0', 5);
+function AlertBox({ shortId, content, options, dismiss }) {
+  const { type = 'alert', dismissable = true } = options;
   return (
-    <AlertBox
-      alertType={ alertType }
+    <AlertWrap
+      type={ type }
     >
       <AlertIcon>
         <Icon
-          aria-describedby={ ariaDescribedBy }
-          type={ alertVariants[alertType].iconType }
-          title={ `${alertType} icon` }
-          fill={ alertVariants[alertType].secondary }
+          aria-describedby={ shortId }
+          type={ alertVariants[type].iconType }
+          title={ `${type} icon` }
+          fill={ alertVariants[type].secondary }
         />
       </AlertIcon>
       <AlertText
         role="alert"
-        id={ ariaDescribedBy }
-      >{ content }</AlertText>
+        id={ shortId }
+      >
+        { content }
+      </AlertText>
       { dismissable &&
-
-        <DismissIcon>
+        <DismissIcon
+          onClick={ () => dismiss(shortId) }
+        >
           <Icon
             type="x"
             title={ 'Dismiss' }
             width="16"
             height="16"
-            fill={ alertVariants[alertType].secondary }
+            fill={ alertVariants[type].secondary }
           />
         </DismissIcon>
       }
-    </AlertBox>
+    </AlertWrap>
   );
 }
-
-Alert.defaultProps = {
-  content: 'Alert text',
-  alertType: 'alert',
-  dismissable: true
+AlertBox.defaultProps = {
+  options: {
+    type: 'warning',
+    dismissable: true
+  }
 };
-
-Alert.propTypes = {
-  content: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string
-  ]),
-  dismissable: PropTypes.bool,
-  alertType: PropTypes.string.isRequired
+AlertBox.propTypes = {
+  content: oneOfType([
+    element,
+    string
+  ]).isRequired,
+  dismiss: func.isRequired,
+  options: shape({
+    type: string,
+    dismissable: bool,
+    dismiss: func
+  })
 };
-
-export default Alert;
+export default AlertBox;

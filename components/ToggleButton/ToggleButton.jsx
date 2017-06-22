@@ -62,22 +62,22 @@ const IconWrap = styled.span`
   color: ${props => props.primary ? Colors.pure_white : Colors.aqua};
 `;
 
-function Button(props) {
-  const { onClick, icon, title, value, primary, href, ariaLabelledBy, disabled } = props;
+function ToggleButton(props) {
+  const { checked, onClick, icon, title, primary, href, ariaLabelledBy, disabled } = props;
 
-  const handleKeyDown = (event) => {
-    const { key } = event;
-    if (key === 'Enter') {
+  const handleClick = (event) => {
+    if (href === null) {
       event.preventDefault();
-      onClick(event);
     }
+    console.log(event.key, event.keyCode);
+    if (onClick) onClick(event);
   };
 
   // Basic
   let iconFill = Colors.aqua;
 
   // Primary
-  if (primary || disabled) {
+  if (checked) {
     iconFill = Colors.pure_white;
   }
 
@@ -90,44 +90,47 @@ function Button(props) {
       />
     </IconWrap>
   );
+
+  const renderLabel = () => <Title id={ ariaLabelledBy } icon={ icon }>{ title }</Title>;
+
   const buttonProps = {
     disabled,
     icon,
     href,
-    primary,
-    title,
-    value
+    primary
   };
   return (
     <CDLButton
+      type="button"
+      ariaPressed={ checked }
       role={ href ? undefined : 'button' }
-      onKeyDown={ handleKeyDown }
-      onClick={ onClick }
+      onKeyDown={ handleClick }
+      onClick={ handleClick }
       tabIndex={ 0 }
       { ...buttonProps }
     >
       { icon && renderIcon() }
-      <Title id={ ariaLabelledBy } icon={ icon }>{ title }</Title>
+      { renderLabel() }
     </CDLButton>
   );
 }
 
-Button.defaultProps = {
+ToggleButton.defaultProps = {
   btnClass: 'default',
   href: null,
   icon: null,
-  value: '',
   ariaLabelledBy: randomize('Aa0', 5),
+  onClick: () => {},
   primary: null,
   disabled: false
 };
 
-Button.propTypes = {
+ToggleButton.propTypes = {
   title: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  checked: PropTypes.bool.isRequired,
+  onClick: PropTypes.func,
   primary: PropTypes.bool,
   disabled: PropTypes.bool,
-  value: PropTypes.string,
   ariaLabelledBy: PropTypes.string,
   href: PropTypes.string,
   icon: PropTypes.oneOfType([
@@ -136,4 +139,4 @@ Button.propTypes = {
   ])
 };
 
-export default Button;
+export default ToggleButton;

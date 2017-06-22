@@ -3,17 +3,18 @@
 
 ## Components
 ### [Accordion](https://macmillanlearning.atlassian.net/wiki/display/CDL/Accordions)
-Links:
+
+#### Links:
 * [Accessible accordion using ARIA and Vanilla Javascript - Van11y](https://van11y.net/accessible-accordion/)
 ### [Alert](https://macmillanlearning.atlassian.net/wiki/pages/viewpage.action?pageId=69402693)
 
 Alerts are used the tell the user important information related to their current activity, or to signal a change has occurred to one of their items.
 
 **TODO/Considerations**
+
 * CDL does not specify animations, how should alerts appear?
-* Should have its own state?
+* Probably needs to have its own state
 * How to manage delay? Allow custom delay?
-* 
 
 **Props**
 
@@ -29,6 +30,9 @@ Alerts are used the tell the user important information related to their current
 ```
 [IMAGE]
 
+#### Links
+* [schiehll/react-alert: A simple react alert (toaster style) component](https://github.com/schiehll/react-alert)
+
 ### [Breadcrumbs](https://macmillanlearning.atlassian.net/wiki/display/CDL/Breadcrumbs)
 ### [Button](https://macmillanlearning.atlassian.net/wiki/display/CDL/Buttons)
 
@@ -37,13 +41,25 @@ Alerts are used the tell the user important information related to their current
 * Text buttons
 * Button group
 * Tab group
-Links:
+
+#### Links:
+* [How to use the Button Element to improve Accessibility • RachieVee: Rachel's Blog](http://rachievee.com/use-button-element-improve-accessibility/)
+* [Building Accessible Buttons with ARIA](https://www.deque.com/blog/accessible-aria-buttons)
 * [Button Examples | WAI-ARIA Authoring Practices 1.1](https://www.w3.org/TR/wai-aria-practices/examples/button/button.html)
 
 ### [Card](https://macmillanlearning.atlassian.net/wiki/display/CDL/Cards)
 ### Checkbox
-### [Dialog](https://macmillanlearning.atlassian.net/wiki/display/CDL/Dialogs)
+### [Dialog/Modal](https://macmillanlearning.atlassian.net/wiki/display/CDL/Dialogs)
+
+#### Links
+* [gdkraus/accessible-modal-dialog: An demonstration of how to code a modal dialog/window so that it is accessible to people with disabilities.](https://github.com/gdkraus/accessible-modal-dialog)
+* 
 ### [Form](https://macmillanlearning.atlassian.net/wiki/display/CDL/Forms)
+### Icon
+
+#### Links:
+* [How Can I Make My Icon System Accessible? | CSS-Tricks](https://css-tricks.com/can-make-icon-system-accessible/)
+
 ### Input
 ### Layout
 ### [Menu](https://macmillanlearning.atlassian.net/wiki/display/CDL/Menus)
@@ -51,17 +67,21 @@ Links:
 ### [Step Indicators](https://macmillanlearning.atlassian.net/wiki/display/CDL/Step+Indicators)
 ### [Table](https://macmillanlearning.atlassian.net/wiki/display/CDL/Tables)
 ### [Tabs](https://macmillanlearning.atlassian.net/wiki/display/CDL/Tabs)
-Links
+
+#### Links
 * [Accessible tab panel using ARIA and Vanilla Javascript - Van11y](https://van11y.net/accessible-tab-panel/)
 
 ### [Title Bar](https://macmillanlearning.atlassian.net/wiki/display/CDL/Title+Bar)
 ### [Tooltip](https://macmillanlearning.atlassian.net/wiki/pages/viewpage.action?pageId=72155528)
 ### Toggle
+#### Links
+* [Accessible custom checkboxes and radio buttons | 456 Berea Street](http://www.456bereastreet.com/archive/201211/accessible_custom_checkboxes_and_radio_buttons/)
+
 ### [Tree Menu](https://macmillanlearning.atlassian.net/wiki/display/CDL/Tree+Menus)
 
 ## Done
 
-* ~~Add Github page for demo https://github.com/tschaub/gh-pages~~
+* Add Github page for demo https://github.com/tschaub/gh-pages
 
 ## Getting Started
 

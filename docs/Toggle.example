@@ -1,0 +1,8 @@
+<div>
+  <h3>Toggle</h3>
+  <Toggle label="Toggle" onChange={ () => {} } />
+  <Toggle label="Toggle" onChange={ () => {} } checked />
+  <h3>Disabled</h3>
+  <Toggle label="Toggle" onChange={ () => {} } disabled />
+  <Toggle label="Toggle" onChange={ () => {} } checked disabled />
+</div>

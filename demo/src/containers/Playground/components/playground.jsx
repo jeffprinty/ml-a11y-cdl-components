@@ -18,6 +18,7 @@ class ReactPlayground extends Component {
   static propTypes = {
     codeText: PropTypes.string.isRequired,
     scope: PropTypes.object.isRequired,
+    showEditor: PropTypes.bool,
     collapsableCode: PropTypes.bool,
     docClass: PropTypes.func,
     propDescriptionMap: PropTypes.object,
@@ -65,6 +66,7 @@ class ReactPlayground extends Component {
       es6Console,
       noRender,
       previewComponent,
+      showEditor = true,
       propDescriptionMap,
       scope,
       selectedLines,
@@ -79,16 +81,18 @@ class ReactPlayground extends Component {
               propDescriptionMap={ propDescriptionMap }
             /> : null
         }
-        <div className={ `playgroundCode${expandedCode ? ' expandedCode' : ''}` }>
-          <Editor
-            className="playgroundStage"
-            codeText={ code }
-            external={ external }
-            onChange={ this._handleCodeChange }
-            selectedLines={ selectedLines }
-            theme={ theme }
-          />
-        </div>
+        { showEditor && 
+          <div className={ `playgroundCode${expandedCode ? ' expandedCode' : ''}` }>
+            <Editor
+              className="playgroundStage"
+              codeText={ code }
+              external={ external }
+              onChange={ this._handleCodeChange }
+              selectedLines={ selectedLines }
+              theme={ theme }
+            />
+          </div>
+        }
         {
           collapsableCode ?
             <div className="playgroundToggleCodeBar">

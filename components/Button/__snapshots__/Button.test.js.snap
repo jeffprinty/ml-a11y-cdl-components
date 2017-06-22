@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/components/Button should update style on hover 1`] = `
+<Button
+  ariaLabelledBy="testButton"
+  btnClass="default"
+  disabled={false}
+  href={null}
+  icon={null}
+  onClick={[Function]}
+  primary={null}
+  title="Button"
+>
+  <styled.a
+    href={null}
+    icon={null}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    primary={null}
+    role="button"
+    tabIndex={0}
+  >
+    <a
+      className="bvcQgl"
+      href={null}
+      icon={null}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      <styled.span
+        icon={null}
+        id="testButton"
+      >
+        <span
+          className="kdFLFV"
+          icon={null}
+          id="testButton"
+        >
+          Button
+        </span>
+      </styled.span>
+    </a>
+  </styled.a>
+</Button>
+`;
+
+exports[`/components/Button should update style on hover 2`] = `
+<Button
+  ariaLabelledBy="testButton"
+  btnClass="default"
+  disabled={false}
+  href={null}
+  icon={null}
+  onClick={[Function]}
+  primary={null}
+  title="Button"
+>
+  <styled.a
+    href={null}
+    icon={null}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    primary={null}
+    role="button"
+    tabIndex={0}
+  >
+    <a
+      className="bvcQgl"
+      href={null}
+      icon={null}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      <styled.span
+        icon={null}
+        id="testButton"
+      >
+        <span
+          className="kdFLFV"
+          icon={null}
+          id="testButton"
+        >
+          Button
+        </span>
+      </styled.span>
+    </a>
+  </styled.a>
+</Button>
+`;
+
+exports[`/components/Button with href should match the snapshot when disabled 1`] = `
+<Button
+  ariaLabelledBy="testButton"
+  btnClass="default"
+  disabled={true}
+  href="http://fastgood.cheap/"
+  icon={null}
+  onClick={[Function]}
+  primary={null}
+  title="Button"
+>
+  <styled.button
+    aria-disabled={true}
+    aria-labelledby="testButton"
+    ariaLabelledBy="testButton"
+    btnClass="default"
+    disabled={true}
+    href="http://fastgood.cheap/"
+    icon={null}
+    onClick={[Function]}
+    primary={null}
+    tabIndex={0}
+    title="Button"
+  >
+    <button
+      aria-disabled={true}
+      aria-labelledby="testButton"
+      className="fuYbFQ"
+      disabled={true}
+      href="http://fastgood.cheap/"
+      icon={null}
+      onClick={[Function]}
+      tabIndex={0}
+      title="Button"
+    >
+      <styled.span
+        icon={null}
+        id="testButton"
+      >
+        <span
+          className="kdFLFV"
+          icon={null}
+          id="testButton"
+        >
+          Button
+        </span>
+      </styled.span>
+    </button>
+  </styled.button>
+</Button>
+`;
+
+exports[`/components/Button with href should match the snapshot when enabled 1`] = `
+<Button
+  ariaLabelledBy="testButton"
+  btnClass="default"
+  disabled={false}
+  href="http://fastgood.cheap/"
+  icon={null}
+  onClick={[Function]}
+  primary={null}
+  title="Button"
+>
+  <styled.a
+    href="http://fastgood.cheap/"
+    icon={null}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    primary={null}
+    tabIndex={0}
+  >
+    <a
+      className="bvcQgl"
+      href="http://fastgood.cheap/"
+      icon={null}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+    >
+      <styled.span
+        icon={null}
+        id="testButton"
+      >
+        <span
+          className="kdFLFV"
+          icon={null}
+          id="testButton"
+        >
+          Button
+        </span>
+      </styled.span>
+    </a>
+  </styled.a>
+</Button>
+`;
