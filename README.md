@@ -53,7 +53,7 @@ Alerts are used the tell the user important information related to their current
 
 #### Links
 * [gdkraus/accessible-modal-dialog: An demonstration of how to code a modal dialog/window so that it is accessible to people with disabilities.](https://github.com/gdkraus/accessible-modal-dialog)
-* 
+
 ### [Form](https://macmillanlearning.atlassian.net/wiki/display/CDL/Forms)
 ### Icon
 
@@ -63,6 +63,10 @@ Alerts are used the tell the user important information related to their current
 ### Input
 ### Layout
 ### [Menu](https://macmillanlearning.atlassian.net/wiki/display/CDL/Menus)
+### Modal
+#### Links
+* [davidtheclark/react-aria-modal: A fully accessible React modal built according WAI-ARIA Authoring Practices](https://github.com/davidtheclark/react-aria-modal)
+
 ### [Pagination](https://macmillanlearning.atlassian.net/wiki/display/CDL/Pagination)
 ### [Step Indicators](https://macmillanlearning.atlassian.net/wiki/display/CDL/Step+Indicators)
 ### [Table](https://macmillanlearning.atlassian.net/wiki/display/CDL/Tables)

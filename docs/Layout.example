@@ -1,0 +1,10 @@
+<Layout>
+  <Header />
+  <Sidebar>
+    <div>Dope sidebar action</div>
+    <h3>Boop</h3>
+  </Sidebar>
+  <div>
+    <h3>content</h3>
+  </div>
+</Layout>

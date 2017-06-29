@@ -1,1 +1,7 @@
-<Alert alertType="alert" content={ <div>Text within a div passed as a prop <a href="/">link</a></div> } />
+ <div>
+  <Button title="New Alert" value="alert" onClick={ e => this.alert.show("Custom alert text", { type: e.currentTarget.value }) } />
+  <Button title="New Warning" value="warning" onClick={ e => this.alert.show(e.currentTarget.title, { type: e.currentTarget.value}) } />
+  <Button title="New error" value="error" onClick={ e => this.alert.show(e.currentTarget.title, { type: e.currentTarget.value}) } />
+  <Button title="New success" value="success" onClick={ e => this.alert.show(e.currentTarget.title, { type: e.currentTarget.value}) } />
+  <Alert ref={ a => this.alert = a } />
+</div>

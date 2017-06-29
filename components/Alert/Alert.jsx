@@ -1,6 +1,5 @@
 import React from 'react';
 import { oneOfType, shape, string, element, func, bool } from 'prop-types';
-import randomize from 'randomatic';
 import styled, { css } from 'styled-components';
 import Icon from '../Icon/Icon';
 import Colors from '../colors';
@@ -121,6 +120,7 @@ AlertBox.propTypes = {
     string
   ]).isRequired,
   dismiss: func.isRequired,
+  shortId: string.isRequired,
   options: shape({
     type: string,
     dismissable: bool,

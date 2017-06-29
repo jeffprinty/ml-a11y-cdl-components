@@ -108,7 +108,7 @@ class Preview extends Component {
   render() {
     const { error } = this.state;
     return (
-      <div>
+      <div style={{ overflow: 'hidden' }}>
         {error !== null ?
           <div className="playgroundError">{error}</div> :
           null}
