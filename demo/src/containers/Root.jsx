@@ -8,10 +8,11 @@ import Playground from './Playground';
 
 import { Button, Column, Alert, Toggle } from '../../../components';
 import { Layout, Sidebar, Header, Page } from '../../../components/Layout/';
+import { Node } from '../../../components/Treeview/';
 import {
   ButtonUsage, ButtonExample,
   ButtonWithIconExample, AlertExample, AlertUsage,
-  ToggleExample, ToggleUsage, LayoutExample
+  ToggleExample, ToggleUsage
 } from '../../../docs';
 
 const Container = styled.div`
@@ -24,7 +25,6 @@ const ToggleRow = styled.div`
   margin-bottom: 10px;
 `;
 // const Title = styled.h1`
-
 // `;
 // const Status = styled.div`
 //   position: fixed;
@@ -53,6 +53,23 @@ export default class Root extends Component {
       [ 4, 4, 4 ],
       [ 4, 4, 2, 2 ]
     ];
+    const tree = {
+      title: 'howdy',
+      childNodes: [
+        { title: 'bobby' },
+        { title: 'suzie',
+          childNodes: [
+            {
+              title: 'puppy',
+              childNodes: [
+                { title: 'dog house' }
+              ]
+            },
+            { title: 'cherry tree' }
+          ]
+        }
+      ]
+    };
     return (
       <Layout sidebar={ sidebarRight ? 'right' : 'left' }>
         <Header title="ml-a11y-cdl-components" />
@@ -83,6 +100,9 @@ export default class Root extends Component {
           </ul>
         </Sidebar>
         <div>
+          <Page>
+            <Node node={ tree } />
+          </Page>
           <Page>
             <h2><a name="toggle">Toggle</a></h2>
             <ReactMarkdown source={ ToggleUsage } />

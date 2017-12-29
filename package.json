@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --colors --content-base ./demo/ --hot --history-api-fallback",
     "build": "webpack --config webpack.config.js",
-    "clean": "rimraf node_modules/gh-pages/.cache && rimraf build/",
+    "clean": "rm -rf node_modules/gh-pages/.cache && rm -rf build/",
     "deploy": "npm run clean&&npm run build&&gh-pages -d build -r https://github.com/jeffprinty/ml-a11y-cdl-components",
     "test": "jest --verbose",
     "test:watch": "jest --watch",

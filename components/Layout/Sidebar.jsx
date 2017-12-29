@@ -1,7 +1,7 @@
 import React from 'react';
 import { node, object } from 'prop-types';
 import styled from 'styled-components';
-import media from './mediaQueries';
+// import media from './mediaQueries';
 
 const SidebarAside = styled.aside`
   position: fixed;
