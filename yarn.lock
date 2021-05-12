@@ -1413,9 +1413,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codemirror@^5.18.2, codemirror@^5.25.2:
-  version "5.27.2"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.27.2.tgz#a292d42f079d5b98c68c3146fab99844f3d8776c"
+codemirror@^5.18.2, codemirror@^5.58.2:
+  version "5.58.2"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.58.2.tgz#ed54a1796de1498688bea1cdd4e9eeb187565d1b"
 
 collections@^0.2.0:
   version "0.2.2"
